@@ -10,7 +10,14 @@ var interval = setInterval(function () {
 }, 100);
 
 // listen for save button click
-
+$(document).ready(function () {
+  $(".saveBtn").on("click", function () {
+    var time = $(this).parent().attr("id");
+    var value = $(this).siblings(".description").val();
+    var savedMsg = document.createElement
+    localStorage.setItem(time, value);
+  });
+  
 // variable to get current number of hours from moment.js
 
 // loop over time block to identify past future present
