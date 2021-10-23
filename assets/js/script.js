@@ -17,4 +17,4 @@ var interval = setInterval(function () {
 
 // load any save data from localStorage
 
-// button to clear local storag
+// button to clear localStorage
