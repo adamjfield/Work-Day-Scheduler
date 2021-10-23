@@ -54,3 +54,7 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 });
 
 // button to clear localStorage
+$("#clearSchedule").on("click", function () {
+  localStorage.clear();
+  location.reload(true);
+});
