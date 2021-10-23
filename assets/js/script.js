@@ -4,6 +4,10 @@ var currentDate =
 var currentHour = moment().format("h:mm:ss a");
 
 // display current day on page
+var interval = setInterval(function () {
+  var momentNow = moment();
+  $("#currentDay").html(momentNow.format("dddd, MMMM Do"));
+}, 100);
 
 // listen for save button click
 
@@ -13,4 +17,4 @@ var currentHour = moment().format("h:mm:ss a");
 
 // load any save data from localStorage
 
-// button to clear local storage
+// button to clear local storag
