@@ -17,10 +17,29 @@ $(document).ready(function () {
     var savedMsg = document.createElement
     localStorage.setItem(time, value);
   });
-  
-// variable to get current number of hours from moment.js
 
+  function hrUpdate() {
+// variable to get current number of hours from moment.js
+var currentHour = moment().format("HH").toString();
+console.log(currentHour);
 // loop over time block to identify past future present
+$(".time-block").each(function () {
+  var blockHour = parseInt($(this).attr("id").split("-")[1]);
+  console.log(blockHour);
+  if (blockHour < currentHour) {
+    $(this).addClass("past");
+  } else if (blockHour == currentHour) {
+    $(this).removeClass("past");
+    $(this).addClass("present");
+  } else {
+    $(this).removeClass("past");
+    $(this).removeClass("present");
+    $(this).addClass("future");
+  }
+});
+}
+
+hrUpdate();
 
 // load any save data from localStorage
 
